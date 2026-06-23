@@ -18,6 +18,16 @@
 	- SaveHostGpuInfraStates / SaveContainerGpuInfraStates
 		- 메시지 내 GPU uuid·MIG uuid를 ``InfraState.<uuid>` 키로 저장
 - ## core
+- |Table|설명|
+  |--|--|
+  |infra_gpu_monitoring_info_v2|ReplacingMergeTree / (host_id, uuid)|
+  |infra_gpu_monitoring_stat|MergeTree / (host_id, uuid, collect_time)|
+  |infra_gpu_monitoring_process|MergeTree / (host_id, uuid, collect_time)|
+  |infra_gpu_mig_monitoring_info|ReplacingMergeTree / (host_id, gpu_uuid, mig_uuid)|
+  |infra_gpu_mig_monitoring_stat|MergeTree / (host_id, gpu_uuid, mig_uuid, collect_time)|
+- host_id
+	- host의 경우는 host_id
+	- container
 -
 - ## ingester
 -
