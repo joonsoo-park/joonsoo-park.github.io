@@ -14,8 +14,10 @@
 -
 - # 작업 모듈
 - ## receiver
-- internal/pkg/redis/cache/gpu_infra_state.go │ SaveHostGpuInfraStates/SaveContainerGpuInfraStates — 메시지 내 GPU uuid·MIG uuid를 │
-- │ (신규) │ InfraState.<uuid> 키로 저장
+- ``internal/pkg/redis/cache/gpu_infra_state.go`
+	- SaveHostGpuInfraStates / SaveContainerGpuInfraStates
+		- 메시지 내 GPU uuid·MIG uuid를 ``InfraState.<uuid>` 키로 저장
 - ## core
+-
 - ## ingester
 -
