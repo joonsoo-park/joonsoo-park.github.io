@@ -1,2 +1,2 @@
-:file/name-format :triple-lowbar
-:publishing/all-pages-public? true
+{:file/name-format :triple-lowbar
+ :publishing/all-pages-public? true}
