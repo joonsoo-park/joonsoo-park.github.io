@@ -2,6 +2,8 @@
 - https://app.clickup.com/t/25540965/DSP-42350?block=block-l_7b9rEfD7
 -
 -
+- # wkrdjq
+-
 - # 용어 설명
 - #### MIG
 	- 하나의 물리 GPU를 여러 개의 독립적인 GPU처럼 나누어 사용하는 것
