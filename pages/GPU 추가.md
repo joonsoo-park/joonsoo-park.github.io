@@ -2,7 +2,9 @@
 - https://app.clickup.com/t/25540965/DSP-42350?block=block-l_7b9rEfD7
 -
 -
-- # wkrdjq
+- # 작업 목적
+- host GPU + container GPU
+- 통합 테이블 이용한 데이터 관리
 -
 - # 용어 설명
 - #### MIG
