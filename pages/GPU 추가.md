@@ -36,7 +36,5 @@
 	- data_id: infra_gpu_*, host/node 공통
 	- 매퍼가 직접 만들던 알람 Kafka 메시지는 제거 — 알람은 AlertMetricProducer(metric_dist→활성 룰 data_id 필터→Kafka) 단일 경로로 일원화
 - DCGM prof 8종(gr_engine/dram/sm/sm_occupancy/tensor/fp64/fp32/fp16 active)은 metric에서 /100하여 %(0~100) 로 기록. stat 테이블 칼럼은 raw(0~10000) 유지
-- idle_since: dcgm_prof_sm_active < 1000(SM Util<10%) → idle 진입 시각 기록, busy 전환 시 NULL, 측정불가(nil) 시 직전 유지. Redis store 사용(uuid 키) —
-- ingester 스케일아웃 시 일관성. stat raw는 그대로(idle 임계값이 raw 기준)
 - process 메트릭은 미생성 (process는 타깃이 아님 — 테이블 저장만)
 - MIG도 동일하게 idle_since (mig_uuid 키, 같은 함수 재사용)
