@@ -11,8 +11,18 @@
 - # 진행 상황
 - DONE 수집단 작업
 - DONE API 작업
-- /done agent
+- DONE agent 작업
+- WAITING 프론트
 -
+- # 담당자
+- #### API
+	- 김효정
+	- 박희원
+- #### Front
+	- 배지호
+- #### Agent
+	- 박세훈
+	- 김예진
 -
 - # 용어 설명
 - #### MIG
@@ -46,12 +56,3 @@
 - MIG도 동일하게 idle_since (mig_uuid 키, 같은 함수 재사용)
 -
 -
-- # 담당자
-- #### API
-	- 김효정
-	- 박희원
-- Front
-	- 배지호
-- Agent
-	- 박재우
-	- 김예진
