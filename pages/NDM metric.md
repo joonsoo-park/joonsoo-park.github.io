@@ -23,13 +23,14 @@
 		- 장비에서 실제로 수집하는 값으로 unique 함
 			- pg 의 `xm_network_oid` 테이블 저장
 	- ## 👉 OID name
+	  id:: 5f1ee9fd-248e-4dd1-9e90-aa98d569d50c
 		- OID 표현 이름
 			- ex) device.cpu, interface.in_octets
 		- 사용자가 지정 가능한 값, 가변 값
 		- unique 한 값이 아님
 	- ## 👉 OID 와 OID name 관계
 		- N:1 관계
-		- 여러 oid 가 동일한 oid name 가질 수 있음
+		- 여러 oid 가 동일한 ((5f1ee9fd-248e-4dd1-9e90-aa98d569d50c)) 가질 수 있음
 			- ex) cisco 장비 → .1.3.6.1.5.4.7.1
 			- aruba 장비 → .1.3.6.1.5.4.3.3
 		- 벤더/모델마다 oid 가 달라서 oid name 으로 묶음
