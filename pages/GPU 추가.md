@@ -8,4 +8,11 @@
 -
 -
 - # 작업 브랜치
+- DSP-42350_gpu_monitoring
+-
+- # 작업 모듈
+- ## receiver
+-
+- ## core
+- ## ingester
 -
