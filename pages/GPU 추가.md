@@ -12,7 +12,7 @@
 - DONE 수집단 작업
 - DONE API 작업
 - DONE agent 작업
-- WAITING 프론트
+- WAITING 프론트 (6월 25일 확인 가능, 담당자 연차)
 -
 - # 담당자
 - #### API
