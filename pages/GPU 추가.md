@@ -54,5 +54,3 @@
 - DCGM prof 8종(gr_engine/dram/sm/sm_occupancy/tensor/fp64/fp32/fp16 active)은 metric에서 /100하여 %(0~100) 로 기록. stat 테이블 칼럼은 raw(0~10000) 유지
 - process 메트릭은 미생성 (process는 타깃이 아님 — 테이블 저장만)
 - MIG도 동일하게 idle_since (mig_uuid 키, 같은 함수 재사용)
--
--

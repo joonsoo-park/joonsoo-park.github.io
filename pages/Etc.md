@@ -1,0 +1,11 @@
+- # QA 환경 목록
+	- http://10.10.49.210:5001
+-
+- # 최신 뉴스
+	- https://m.etnews.com
+	- https://news.ycombinator.com/best
+	- https://news.hada.io/new
+-
+- # slow query 설정 방법
+	- mysql slow query - host agent 설정
+	- https://doc.clickup.com/d/h/rbeb5-395398/f3b8322027544fa/rbeb5-3672058
