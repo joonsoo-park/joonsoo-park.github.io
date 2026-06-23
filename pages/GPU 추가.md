@@ -1,6 +1,8 @@
 # 테스크
 - https://app.clickup.com/t/25540965/DSP-42350?block=block-l_7b9rEfD7
 -
+- # 작업 브랜치
+- DSP-42350_gpu_monitoring
 -
 - # 작업 목적
 - host GPU + container GPU
@@ -10,13 +12,10 @@
 - #### MIG
 	- 하나의 물리 GPU를 여러 개의 독립적인 GPU처럼 나누어 사용하는 것
 -
--
-- # 작업 브랜치
-- DSP-42350_gpu_monitoring
--
 - # 작업 모듈
 - ## receiver
--
+- internal/pkg/redis/cache/gpu_infra_state.go │ SaveHostGpuInfraStates/SaveContainerGpuInfraStates — 메시지 내 GPU uuid·MIG uuid를 │
+- │ (신규) │ InfraState.<uuid> 키로 저장
 - ## core
 - ## ingester
 -
