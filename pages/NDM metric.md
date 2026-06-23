@@ -14,10 +14,12 @@
 	- 숫자형 값은 기존 `metric` 테이블과 통합 가능한지 확인 중 → 안되는걸로 판단되어서 추가 테이블 생성 필요 `network_metric`
 - # 용어 설명
 	- ## 👉 SNMP
+	  id:: 36ee0267-dbee-4aaa-b676-225866d8d7dc
 		- Simple Network Management Protocol
 		- 네트워크 장비(스위치, 라우터, 방화벽) 원격으로 모니터링 하기 위한 표준 프로토콜
 		- agent가 장비에 OID 로 값을 query(?) 하면 장비가 응답
 	- ## 👉 OID
+	  id:: bc7a1712-c64f-4f1b-9a27-4474968f2b4a
 		- 실제 SNMP 객체 실별자 (점 표기 사용)
 			- ex) .1.3.6.1.2.1.1.2.0
 		- 장비에서 실제로 수집하는 값으로 unique 함
@@ -33,17 +35,17 @@
 		- 여러 oid 가 동일한 ((5f1ee9fd-248e-4dd1-9e90-aa98d569d50c)) 가질 수 있음
 			- ex) cisco 장비 → .1.3.6.1.5.4.7.1
 			- aruba 장비 → .1.3.6.1.5.4.3.3
-		- 벤더/모델마다 oid 가 달라서 oid name 으로 묶음
-		- → 그래서 metric테이블의 data_id 로 oid name 을 사용하면 묶어서 조회 가능
-		- ex) `device.cpu` 에 대해 벤더/모델마다 다른 OID
+		- 벤더/모델마다 oid 가 달라서 ((5f1ee9fd-248e-4dd1-9e90-aa98d569d50c)) 으로 묶음
+		- → 그래서 metric테이블의 data_id 로 ((5f1ee9fd-248e-4dd1-9e90-aa98d569d50c))e 을 사용하면 묶어서 조회 가능
+		- ex) `device.cpu` 에 대해 벤더/모델마다 다른 ((bc7a1712-c64f-4f1b-9a27-4474968f2b4a))
 		- ![](https://t25540965.p.clickup-attachments.com/t25540965/483ae7ab-fb7d-4c96-ab60-0d578fd02cea/image.png)
 	- ## 👉 OID index
-		- SNMP 인스턴스 인덱스
+		- ((36ee0267-dbee-4aaa-b676-225866d8d7dc)) 인스턴스 인덱스
 		- 0 은 index 가 하나만 있는 경우
 		- 1~ 는 각 인스턴스의 인덱스
 		- ex) .3.1.2.5.3 의 인덱스는 .3.1.2.5.3.1, .3.1.2.5.3.2 ...
 	- ## 👉 OID pack
-		- 수집할 OID 묶음
+		- 수집할 ((bc7a1712-c64f-4f1b-9a27-4474968f2b4a)) 묶음
 		- 설정을 내려줄때는 pack 단위로 내려줌
 	- ## 👉 OID pack list
 		- receiver → agent로 내려주는 oid pack 목록
