@@ -1,0 +1,48 @@
+- https://app.clickup.com/t/25540965/DSP-38413
+-
+- ❌ MVP 느낌으로 가능성을 확인하는 단계로, 진행이 확정되면 테스크 생성 필요
+-
+- # 개발 중인 환경
+	- 10.10.43.21
+	- 접속 정보: ﻿ [5-2. 10.10.43.21](https://app.clickup.com/25540965/v/dc/rbeb5-395398/rbeb5-3710798?block=block-yEniW21GTa)
+- # 목적
+	- 현재 네트워크 지표의 추가가 필요할 때 마다 Agent 팀과 Core 팀의 수정이 필요한 상황
+		- 수집 데이터 ↔ 테이블 컬럼 1대1 맵핑 구조
+	- 반복적으로 발생하는 이슈로 테이블들의 `Metric` 테이블로 통합이 필요
+- # 현재 진행 상황
+	- string type 의 값 저장 위한 `network_metric_meta` 테이블 추가 됨 → string 타입의 값은 주로 meta 데이터로 수집은 계속 되지만 거의 변경이 되지 않음.
+	- 숫자형 값은 기존 `metric` 테이블과 통합 가능한지 확인 중 → 안되는걸로 판단되어서 추가 테이블 생성 필요 `network_metric`
+- # 용어 설명
+	- #### 👉 SNMP
+		- Simple Network Management Protocol
+		- 네트워크 장비(스위치, 라우터, 방화벽) 원격으로 모니터링 하기 위한 표준 프로토콜
+		- agent가 장비에 OID 로 값을 query(?) 하면 장비가 응답
+	- #### 👉 OID
+		- 실제 SNMP 객체 실별자 (점 표기 사용)
+			- ex) .1.3.6.1.2.1.1.2.0
+		- 장비에서 실제로 수집하는 값으로 unique 함
+			- pg 의 `xm_network_oid` 테이블 저장
+	- #### 👉 OID name
+		- OID 표현 이름
+			- ex) device.cpu, interface.in_octets
+		- 사용자가 지정 가능한 값, 가변 값
+		- unique 한 값이 아님
+	- #### 👉 OID 와 OID name 관계
+		- N:1 관계
+		- 여러 oid 가 동일한 oid name 가질 수 있음
+			- ex) cisco 장비 → .1.3.6.1.5.4.7.1
+			- aruba 장비 → .1.3.6.1.5.4.3.3
+		- 벤더/모델마다 oid 가 달라서 oid name 으로 묶음
+		- → 그래서 metric테이블의 data_id 로 oid name 을 사용하면 묶어서 조회 가능
+		- ex) `device.cpu` 에 대해 벤더/모델마다 다른 OID
+		- ![](https://t25540965.p.clickup-attachments.com/t25540965/483ae7ab-fb7d-4c96-ab60-0d578fd02cea/image.png)
+	- #### 👉 OID index
+		- SNMP 인스턴스 인덱스
+		- 0 은 index 가 하나만 있는 경우
+		- 1~ 는 각 인스턴스의 인덱스
+		- ex) .3.1.2.5.3 의 인덱스는 .3.1.2.5.3.1, .3.1.2.5.3.2 ...
+	- #### 👉 OID pack
+		- 수집할 OID 묶음
+		- 설정을 내려줄때는 pack 단위로 내려줌
+	- #### 👉 OID pack list
+		- receiver → agent로 내려주는 oid pack 목록
